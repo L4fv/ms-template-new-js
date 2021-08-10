@@ -1,0 +1,47 @@
+{
+    "name": "ms-template-js",
+    "version": "1.0.0",
+    "description": "Microservicio template",
+    "main": "app.js",
+    "author": "Luis Flores Vallejos <luis.flores@innout.pe>",
+    "scripts": {
+        "start": "cross-env NODE_ENV=production NODE_PATH=./ nodemon ./src/app.js",
+        "dev": "cross-env NPM_CONFIG_PRODUCTION=false NODE_ENV=development NODE_PATH=./ nodemon ./src/app.js",
+        "local-mg": "cross-env NPM_CONFIG_PRODUCTION=false NODE_ENV=local NODE_PATH=./ npx sequelize-cli db:migrate",
+        "local-se": "cross-env NPM_CONFIG_PRODUCTION=false NODE_ENV=local NODE_PATH=./ npx sequelize-cli db:seed:all",
+        "local-ge-se": "cross-env NPM_CONFIG_PRODUCTION=false NODE_ENV=local NODE_PATH=./ npx sequelize-cli seed:generate --name create-posts",
+        "local-ge": "npx sequelize-cli model:generate --name user --attributes name:string,password:string,email:string",
+        "lint": "eslint --fix --ext .js,.jsx .",
+        "deploy": "docker-compose down && docker build . -t ms-templater:1.001  && docker-compose up -d"
+    },
+    "keywords": [
+        "nodejs",
+        "bootstrap",
+        "express"
+    ],
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "date-fns": "^2.12.0",
+        "dotenv": "^4.0.0",
+        "express": "^4.17.1",
+        "helmet": "^4.4.1",
+        "moment-timezone": "0.5.27",
+        "morgan": "^1.10.0",
+        "mysql2": "^2.2.5",
+        "sequelize": "^6.5.0",
+        "winston": "^3.3.3",
+        "joi": "^17.4.2"
+    },
+    "devDependencies": {
+        "cross-env": "^5.1.3",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-prettier": "^3.4.0",
+        "nodemon": "^2.0.2",
+        "prettier": "^2.3.2",
+        "sequelize-cli": "^6.2.0"
+    }
+}

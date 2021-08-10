@@ -1,1 +1,8 @@
-# ms-template-new-js
+## INSTALATION
+
+
+## DOCKER INTEGRATION
+
+# aws credentials
+
+~/.aws/credentials

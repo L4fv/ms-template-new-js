@@ -1,0 +1,7 @@
+version: "2"
+services:
+  ms-notificaciones-1:
+    restart: always
+    image: "ms-notificaciones:1.001"
+    ports:
+      - "30000:3000"
